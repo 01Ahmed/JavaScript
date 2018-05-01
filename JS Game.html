@@ -1,0 +1,50 @@
+<html>
+
+<head>
+
+	<title>Game</title>
+
+	<style type="text/css">
+
+	body{
+
+		background-color: black;
+	}
+
+
+
+	</style>
+
+</head>
+
+<body>
+
+	<p><input type="text" id="guess"> <button id="checkGuess">Guess</button></p>
+
+	<script type="text/javascript">
+
+	document.getElementById('checkGuess').onclick = function(){
+
+		var randomNumber = Math.random();
+
+		randomNumber = randomNumber * 6; 
+
+		randomNumber = Math.floor(randomNumber);
+
+		if(document.getElementById('guess').value == randomNumber)
+		{
+			alert("You got It");
+		}
+		else
+		{
+			alert("Nope" + randomNumber);
+		}
+	}
+
+
+	</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<html>
+<head>
+
+	<title>JS Project</title>
+
+	<style type="text/css">
+
+	body{
+
+		background-color: #C0C0C0;
+	}
+
+	#shpae{
+
+		width: 200px;
+		height: 200px;
+		background-color: #000000;
+		display: none;
+		position: relative;
+
+	}
+	#TopBar{
+		height: 200px;
+		background-color: #2F4F4F;
+		width: 100%;
+	}
+
+	h1{
+		color: #FFFFF0;
+		font-family: Comic Sans MS;
+	}
+
+	#bold{
+		font-weight: bolder;
+		font-size: 30px;
+		font-family: Comic Sans MS;
+	}
+	p{
+		font-weight: bold;
+	}
+
+
+	</style>
+
+
+
+</head>
+
+<body>
+
+	<div id="TopBar">
+
+		<h1>Test Your Reaction</h1>
+
+		<p id="bold">Click on the boxes and circle as quickly as you can......!  ;')</p>
+
+
+	</div>
+
+	<p>Your Time: <span id="timeTaken"></span></p>
+
+	<div id="shpae"></div>
+
+	<script type="text/javascript">
+
+	var start = new Date().getTime();
+
+	function getRandomColor() {
+
+           var letters = '0123456789ABCDEF'.split('');
+
+           var color = '#';
+
+            for (var i = 0; i < 6; i++) {
+
+            color += letters[Math.floor(Math.random() * 16)];
+
+            }
+
+            return color;
+
+           }
+
+
+	function makeShapeAppear(){
+
+		var top = Math.random() * 400;
+
+		var left = Math.random() * 400;
+
+		var width = (Math.random() * 200) + 100;
+
+		if(Math.random()>0.5){
+
+			document.getElementById("shpae").style.borderRadius = "50%";
+
+		}
+		else{
+
+			document.getElementById("shpae").style.borderRadius="0";
+		}
+
+		document.getElementById("shpae").style.backgroundcolor = getRandomColor();
+
+		document.getElementById("shpae").style.top = top + "px";
+
+		document.getElementById("shpae").style.left = left + "px";
+
+		document.getElementById("shpae").style.width = width + "px";
+
+		document.getElementById("shpae").style.height = width + "px";
+
+		document.getElementById("shpae").style.display="block";
+
+        start = new Date().getTime();
+
+	}
+
+	function appearAfterDelay () {
+		setTimeout(makeShapeAppear, Math.random() * 2000);
+	}
+
+	appearAfterDelay();
+
+	document.getElementById("shpae").onclick = function(){
+
+		var end = new Date().getTime();
+
+		var timeTaken = ((end - start) /1000);
+
+		document.getElementById("timeTaken").innerHTML = timeTaken + "s";  
+
+		document.getElementById("shpae").style.display = "none"; 
+
+		appearAfterDelay();
+	}
+
+
+
+
+
+	</script>
+
+
+
+</body>
+
+
+</html>

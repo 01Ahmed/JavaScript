@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Magic Word</title>
+	<style type="text/css">
+
+	body{
+
+		background-color: gray;
+	}
+
+
+	</style>
+</head>
+<body>
+
+	<h1>MAGIC WORD</h1>
+
+	<p style="color:white;"><input type="text" id="magicWord"></p>
+
+	<p><button id="checkWord">Enter Word</button></p>
+
+	<script type="text/javascript">
+
+	document.getElementById('checkWord').onclick=function(){
+
+		var magicWordEntered = document.getElementById('magicWord').value;
+
+		var magicWord ="AHHO";
+
+		if(magicWordEntered==magicWord)
+		{
+
+			alert('You got it');
+		}
+		else
+		{
+			alert('Wrong Ans');
+		}
+	}
+
+
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>
